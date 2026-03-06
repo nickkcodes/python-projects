@@ -1,70 +1,74 @@
-# Login System
-
 MAX_TRIES = 3
-SPECIAL_CHARS = "!@#$%^&*()-_+="
+SPECIAL_CHARS = '!@#$%^&*()-_'
 
-tries = MAX_TRIES
+def login_system():
+    tries = MAX_TRIES
 
-while tries > 0:
-    user = input('Username: ')
-    password = input('Password: ')
+    while tries > 0:
+        user = input('Username: ')
+        password = input('Password: ')
+        age = get_age()
 
-    # Handle invalid age input
-    try:
-        age = int(input('Age: '))
-    except ValueError:
-        print("Age must be a number.")
+        errors = validate_credentials(user, password, age)
+
+        if not errors:
+            print('You are logged in! ')
+            return
+
         tries -= 1
-        if tries > 0:
-            print(f"Wrong input. You have {tries} tries left.\n")
+
+        if tries == 0:
+            print('Account locked. ')
         else:
-            print("Account locked.")
-        continue
+            for error in errors:
+                print(error)
+            else:
+                print(f'You have {tries} tries left. ')
 
-    valid = True  # reset for this attempt
+def get_age():
+    while True:
+        try:
+            age = int(input('Age: '))
+            return age
+        except ValueError:
+            print('Age must be a number. ')
 
-    # Username rules
-    if len(user) < 5:
-        print('Username must be at least 5 characters.')
-        valid = False
+def validate_credentials(user, password, age):
+    errors = []
+
+    if " " in user:
+        errors.append('User cannot contain spaces. ')
+
+    if " " in password:
+        errors.append('Password cannot contain spaces. ')
+
+    if len(user) < 8:
+        errors.append('Username must be at least 8 characters long. ')
+
+    if not any(char.isdigit() for char in user):
+        errors.append('Username must have one digit. ')
 
     if not any(char.isupper() for char in user):
-        print('Username must contain at least one uppercase letter.')
-        valid = False
+        errors.append('Username must have one uppercase letter. ')
 
-    # Password rules
     if len(password) < 8:
-        print('Password must be at least 8 characters.')
-        valid = False
+        errors.append('Password must at least 8 characters long. ')
 
-    if sum(char.isdigit() for char in password) < 2:
-        print('Password must contain at least 2 numbers.')
-        valid = False
+    if not any(char.isdigit() for char in password):
+        errors.append('Password must have one digit. ')
 
     if not any(char.isupper() for char in password):
-        print('Password must contain at least one uppercase letter.')
-        valid = False
+        errors.append('Password must have one uppercase letter. ')
 
     if not any(char.islower() for char in password):
-        print('Password must contain at least one lowercase letter.')
-        valid = False
+        errors.append('Password must have one lowercase letter. ')
 
     if not any(char in SPECIAL_CHARS for char in password):
-        print(f'Password must contain at least one special character: {SPECIAL_CHARS}')
-        valid = False
+        errors.append("Password must have one special characters [!@#$%^&*()-_] ")
 
-    # Age rule
     if age < 13:
-        print('You must be at least 13 years old.')
-        valid = False
+        errors.append('You must be at least 13 years old to enter. ')
 
-    # Check final result
-    if valid:
-        print("\nAccess granted ✅")
-        break
-    else:
-        tries -= 1
-        if tries > 0:
-            print(f"\nInvalid credentials. You have {tries} tries left.\n")
-        else:
-            print("\nAccount locked ❌")
+    return errors
+
+login_system()
