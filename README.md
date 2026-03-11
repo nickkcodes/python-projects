@@ -8,6 +8,7 @@ I'm self-learning Python and building projects to grow my skills.
 | Project | Description |
 |--------|-------------|
 | [AI Chatbot](./chat_bot.py) | AI chatbot powered by Groq's LLaMA model with conversation memory |
+| [Sales Analyzer](./sales_analyzer.py) | Data analysis tool using pandas to analyze sales data, calculate revenue, and filter products |
 | [Weather App](./weather_app.py) | Real-time weather for any city using Open-Meteo API |
 | [Currency Converter](./currency_converter.py) | Live currency conversion using exchange rate API |
 | [Bank Account](./bank_account.py) | OOP-based bank system with deposit, withdraw, and savings account |
@@ -16,7 +17,7 @@ I'm self-learning Python and building projects to grow my skills.
 | [Number Guess](./number_guess_file.py) | Number guessing game with error handling |
 
 ## 🛠️ Skills
-- Python, OOP, File Handling, APIs, Error Handling
+- Python, OOP, File Handling, APIs, Error Handling, Pandas, Data Analysis
 
 ## 📫 Contact
 - GitHub: [@nickkcodes](https://github.com/nickkcodes)
