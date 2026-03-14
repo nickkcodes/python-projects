@@ -15,9 +15,10 @@ I'm self-learning Python and building projects to grow my skills.
 | [To-Do List](./to_do_lists.py) | Task manager with file persistence |
 | [Login System](./login_system.py) | Secure login with validation and account lockout |
 | [Number Guess](./number_guess_file.py) | Number guessing game with error handling |
+| [Grade Visualizer](./grade_visualizer.py) | Bar and pie charts of student grades using pandas and matplotlib |
 
 ## 🛠️ Skills
-- Python, OOP, File Handling, APIs, Error Handling, Pandas, Data Analysis
+- Python, OOP, File Handling, APIs, Error Handling, Pandas, Data Analysis, Matplotlib
 
 ## 📫 Contact
 - GitHub: [@nickkcodes](https://github.com/nickkcodes)
