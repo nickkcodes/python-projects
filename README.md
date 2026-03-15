@@ -17,6 +17,7 @@ I'm self-learning Python and building projects to grow my skills.
 | [Number Guess](./number_guess_file.py) | Number guessing game with error handling |
 | [Grade Visualizer](./grade_visualizer.py) | Bar and pie charts of student grades using pandas and matplotlib |
 | [Sales Dashboard](./sales_dashboard.py) | Automated sales dashboard generating bar, pie, and line charts using pandas and matplotlib |
+| [Stock Tracker](./stock_tracker.py) | Analyzes and visualizes AAPL, GOOGL, and MSFT stock prices with individual and comparison charts |
 
 ## 🛠️ Skills
 - Python, OOP, File Handling, APIs, Error Handling, Pandas, Data Analysis, Matplotlib
